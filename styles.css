@@ -1,0 +1,208 @@
+:root {
+  --bg: #f5f6ef;
+  --surface: #fffdf7;
+  --ink: #20201d;
+  --muted: #5d5d57;
+  --accent: #007f5f;
+  --accent-2: #ffd166;
+  --line: #d8d5c7;
+  --danger: #bf3b30;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  background:
+    radial-gradient(circle at 15% 10%, #fff9dc 0%, transparent 40%),
+    radial-gradient(circle at 80% 15%, #d7f4ea 0%, transparent 38%),
+    linear-gradient(180deg, #f6f9f3 0%, #f0efe6 100%);
+  line-height: 1.8;
+}
+
+.wrap {
+  width: min(980px, calc(100% - 2rem));
+  margin: 2rem auto 3rem;
+}
+
+.hero,
+.section,
+.form-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+.hero {
+  padding: 2rem;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+.kicker {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0.8rem 0 0.4rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.4;
+}
+
+.lead {
+  margin: 0;
+  color: var(--muted);
+  font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+}
+
+.section {
+  margin-top: 1.25rem;
+  padding: 1.4rem;
+}
+
+.section h2 {
+  margin: 0 0 0.65rem;
+  font-size: 1.15rem;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 0.5rem 1rem;
+}
+
+.overview-grid dt {
+  color: var(--muted);
+  font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+}
+
+.overview-grid dd {
+  margin: 0;
+}
+
+ul.program {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.form-card {
+  margin-top: 1.25rem;
+  padding: 1.4rem;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+label {
+  font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+  font-size: 0.92rem;
+}
+
+.req {
+  color: var(--danger);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid #bab7aa;
+  border-radius: 10px;
+  background: #ffffff;
+  font: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #84cbb6;
+  border-color: var(--accent);
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #008e6b, #146c94);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+}
+
+.btn[disabled] {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.status {
+  min-height: 1.4em;
+  margin: 0;
+  font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+  font-size: 0.94rem;
+}
+
+.status.ok {
+  color: var(--accent);
+}
+
+.status.ng {
+  color: var(--danger);
+}
+
+.contact {
+  margin-top: 1.2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 700px) {
+  .wrap {
+    width: min(980px, calc(100% - 1rem));
+    margin: 1rem auto 2rem;
+  }
+
+  .hero,
+  .section,
+  .form-card {
+    border-radius: 12px;
+    padding: 1rem;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}
